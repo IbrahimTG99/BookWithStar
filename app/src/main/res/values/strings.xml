@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">BookWithStar</string>
+    <string name="background_image">Background</string>
+    <string name="app_logo">App logo</string>
+    <string name="log_in_msg">Log In to continue</string>
+    <string name="welcome_back">Welcome Back!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="log_in">Log in</string>
+    <string name="log_in_u"><u>Log in</u></string>
+    <string name="new_here">New here?</string>
+    <string name="sign_up"> <b><u>Sign Up</u></b></string>
+    <string name="get_started">Get Started!</string>
+    <string name="already_have_an_account">Already have an account? </string>
+    <string name="fill_reg">Fill in all fields to complete your registration</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="register">Register</string>
 </resources>
