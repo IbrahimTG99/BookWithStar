@@ -4,7 +4,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/dark_yellow</item>
         <item name="colorPrimaryVariant">@color/light_yellow</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/off_white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
     </style>
 
     <style name="Theme.BookWithStar.Starting" parent="Theme.SplashScreen">
@@ -27,10 +28,17 @@
         <item name="postSplashScreenTheme">@style/Theme.BookWithStar</item>
     </style>
 
+    <!--  image rounded  -->
+    <style name="imageViewRounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!--  Text input  -->
     <style name="textInputLayout" parent="Theme.BookWithStar">
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="boxStrokeWidth">0dp</item>
-        <item name="boxBackgroundColor">@color/white</item>
+        <item name="boxBackgroundColor">@color/off_white_light</item>
         <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>
@@ -44,5 +52,17 @@
         <item name="android:imeOptions">actionNext</item>
         <item name="android:maxLines">1</item>
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--  bottom sheet  -->
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_design</item>
+        <item name="behavior_peekHeight">@dimen/_400sdp</item>
     </style>
 </resources>

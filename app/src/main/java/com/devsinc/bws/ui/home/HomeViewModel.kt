@@ -1,7 +1,7 @@
-package com.devsinc.bws.ui.SignUp
+package com.devsinc.bws.ui.home
 
 import androidx.lifecycle.ViewModel
 
-class SignUpViewModel : ViewModel() {
+class HomeViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }

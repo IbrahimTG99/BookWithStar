@@ -1,7 +1,7 @@
-package com.devsinc.bws.ui.SignIn
+package com.devsinc.bws.ui.signUp
 
 import androidx.lifecycle.ViewModel
 
-class SignInViewModel : ViewModel() {
+class SignUpViewModel : ViewModel() {
     // TODO: Implement the ViewModel
 }
