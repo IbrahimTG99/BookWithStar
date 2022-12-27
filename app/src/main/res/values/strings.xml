@@ -49,4 +49,10 @@
     <string name="name_placeholder">Ibrahim Tariq</string>
     <string name="reward_points">Reward Points:</string>
     <string name="_0">0</string>
+    <string name="find_your_sports">Find your sports</string>
+    <string name="moto">Be it a pro or an amateur, explore a range of sports and activities you can play with us and our partners.</string>
+    <string name="featured_venues">Featured Venues</string>
+    <string name="featured_classes">Featured Classes</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
