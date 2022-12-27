@@ -46,4 +46,7 @@
     <string name="logout">Logout</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="name_placeholder">Ibrahim Tariq</string>
+    <string name="reward_points">Reward Points:</string>
+    <string name="_0">0</string>
 </resources>
