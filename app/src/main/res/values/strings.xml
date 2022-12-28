@@ -55,4 +55,12 @@
     <string name="featured_classes">Featured Classes</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="reward_description"><![CDATA[The more you play, the more you earn. Play & earn points. For evrey pitch or a class you book via Book With Star, we will give you extra points, fully redeemable at all venues.]]></string>
+    <string name="reward_points_title">Reward\nPoints</string>
+    <string name="book_my_venue">Book My\nVenue</string>
+    <string name="book_my_class">Book My\nClass</string>
+    <string name="activate_my_profile">Activate My\nProfile</string>
+    <string name="book_venue_description">Our online booking system allows you to easily search for available sports facilities and pitches by date, time and location. With a click-of a button, you ca easily book and pay online.</string>
+    <string name="book_class_description">from football to basket ball, cricket, tennis to badminton, we have a greate selection of sports facilieties and pitches acoss Dubai and Sharjah, catering for a wide range of sports.</string>
+    <string name="profile_description">And in case you need extra players, we\'ve got you covered. Our \"Find My Team\" feature allows you to build your own profile and find and connect with like-minded recreational players instantly.</string>
 </resources>
