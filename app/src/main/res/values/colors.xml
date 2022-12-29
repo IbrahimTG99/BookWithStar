@@ -12,4 +12,5 @@
     <color name="light_yellow">#F6D86F</color>
     <color name="dark_yellow">#F6BF29</color>
     <color name="accent_yellow">#FDD330</color>
+    <color name="accent_orange">#F44336</color>
 </resources>
