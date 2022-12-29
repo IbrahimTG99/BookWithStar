@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="@dimen/_10sdp"
+    android:background="@color/off_white_light"
+    android:theme="@style/Theme.BookWithStar"
+    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardElevation="@dimen/_5sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/_10sdp">
+
+        <ImageView
+            android:id="@+id/iv_book_venue"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_180sdp"
+            android:contentDescription="@string/venue_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toTopOf="@id/tv_book_venue_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_book_venue_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:maxLines="2"
+            android:text="@string/al_arqam_private_school"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toTopOf="@id/linearDistance"
+            app:layout_constraintEnd_toStartOf="@id/iv_sport_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_book_venue" />
+
+
+        <ImageView
+            android:id="@+id/iv_sport_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="@string/venue_image"
+            android:src="@drawable/ic_soccer_ball"
+            app:layout_constraintBottom_toTopOf="@id/linearDistance"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_book_venue_title"
+            app:layout_constraintTop_toBottomOf="@id/iv_book_venue" />
+
+
+        <LinearLayout
+            android:id="@+id/linearDistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/btn_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_book_venue_title">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:contentDescription="@string/venue_image"
+                android:src="@drawable/ic_route" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppin_reg"
+                android:text="@string/distance"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_details"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:elevation="@dimen/_5sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/details"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:backgroundTint="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_book"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearDistance" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_book"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@drawable/gradient"
+            android:elevation="@dimen/_5sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/book_now"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_details"
+            app:layout_constraintTop_toBottomOf="@id/linearDistance" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
