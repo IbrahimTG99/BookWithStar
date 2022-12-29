@@ -110,9 +110,9 @@
     <string name="player_location">Player Location</string>
     <string name="describe_yourself">Describe Yourself</string>
     <string name="update_player">Update Player</string>
-    <string name="expiry_date">Expiry Date: 2022-08-31</string>
-    <string name="class_50">Class 50</string>
+    <string name="expiry_date">Expiry Date: 2022–12–31</string>
     <string name="choose_offer">Choose the best offer! Whatever you want</string>
     <string name="pro_or_amateur">Be it a pro or an amateur, explore a range of sports you can play with us and our partners</string>
     <string name="featured_venue">Featured Venue</string>
+    <string name="discount_placeholder">75m</string>
 </resources>
