@@ -48,10 +48,14 @@
             android:clipChildren="false"
             android:clipToPadding="false"
             android:padding="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toTopOf="@id/tv_featured_venues"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_moto" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_moto"
+            app:spanCount="4"
+            tools:itemCount="4"
+            tools:listitem="@layout/rv_optons_panel" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_featured_venues"
@@ -74,11 +78,14 @@
             android:layout_height="wrap_content"
             android:clipChildren="false"
             android:clipToPadding="false"
+            android:orientation="horizontal"
             android:padding="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/tv_featured_classes"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_featured_venues" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_featured_venues"
+            tools:listitem="@layout/rv_featured_item" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_featured_classes"
@@ -101,11 +108,14 @@
             android:layout_height="wrap_content"
             android:clipChildren="false"
             android:clipToPadding="false"
+            android:orientation="horizontal"
             android:padding="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_featured_classes" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_featured_classes"
+            tools:listitem="@layout/rv_featured_item" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>
