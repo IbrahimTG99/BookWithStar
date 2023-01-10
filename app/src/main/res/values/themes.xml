@@ -63,4 +63,13 @@
         <item name="android:background">@drawable/bottom_sheet_design</item>
         <item name="behavior_peekHeight">@dimen/_400sdp</item>
     </style>
+
+    <style name="Theme.BookWithStar.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.BookWithStar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.BookWithStar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

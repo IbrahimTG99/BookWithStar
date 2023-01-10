@@ -15,7 +15,6 @@ import javax.inject.Singleton
 class NetworkModule {
 
     @Provides
-    @Singleton
     fun providesRetrofit(): Retrofit {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
@@ -24,7 +23,6 @@ class NetworkModule {
     }
 
     @Provides
-    @Singleton
     fun providesBookWithStarAPI(retrofit: Retrofit): BookWithStarAPI {
         return retrofit.create(BookWithStarAPI::class.java)
     }
