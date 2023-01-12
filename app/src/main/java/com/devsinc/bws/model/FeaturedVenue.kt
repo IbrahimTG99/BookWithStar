@@ -7,6 +7,6 @@ data class FeaturedVenue(
     val venue_location: String,
     val venue_name: String,
     val venue_phone: String,
-    val venue_rating: Int,
+    val venue_rating: Float,
     val venue_slag: String
 )

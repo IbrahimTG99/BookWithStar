@@ -22,14 +22,10 @@ class AuthViewModel @Inject constructor(
     private val repository: AuthRepository
 ) : ViewModel() {
 
+
     private val _loginFlow = MutableStateFlow<Resource<Customer>?>(null)
     val loginFlow = _loginFlow.asStateFlow()
 
-    init {
-        if (repository.customer != null) {
-            _loginFlow.value = Resource.Success(repository.customer!!)
-        }
-    }
 
     fun login(username: String, password: String) = viewModelScope.launch {
         _loginFlow.value = Resource.Loading
@@ -52,5 +48,18 @@ class AuthViewModel @Inject constructor(
         _loginFlow.value = repository.login(loginParams)
     }
 
-    fun getCustomer() = repository.customer
+    fun isCustomerLoggedIn() = viewModelScope.launch {
+        _loginFlow.value = Resource.Loading
+        _loginFlow.value = if (repository.isCustomerLoggedIn()) {
+            Resource.Success(repository.customer!!)
+        } else {
+            Resource.Error(Exception("Customer is not logged in"))
+        }
+    }
+
+    fun logout() = viewModelScope.launch {
+        _loginFlow.value = Resource.Loading
+        repository.logout()
+        _loginFlow.value = null
+    }
 }

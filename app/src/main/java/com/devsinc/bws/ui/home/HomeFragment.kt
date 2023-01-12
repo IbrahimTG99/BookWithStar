@@ -38,7 +38,19 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
             viewModel.homeDataFlow.collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
-                        Log.d("HomeFragment", "onViewCreated: ${resource.result.toString()}")
+
+                        val featuredVenueAdapter = RecyclerAdapterFeaturedVenues(resource.result.stadium)
+                        binding.rvFeaturedVenues.adapter = featuredVenueAdapter
+                        featuredVenueAdapter.setOnItemClickListener(object : RecyclerAdapterFeaturedVenues.OnItemClickListener {
+                            override fun onItemClick(position: Int) {
+                            }
+                        })
+                        val featuredClassAdapter = RecyclerAdapterFeaturedClasses(resource.result.featured_class)
+                        binding.rvFeaturedClasses.adapter = featuredClassAdapter
+                        featuredClassAdapter.setOnItemClickListener(object : RecyclerAdapterFeaturedClasses.OnItemClickListener {
+                            override fun onItemClick(position: Int) {
+                            }
+                        })
                     }
                     is Resource.Error -> {
                         Log.w("HomeFragment", "onViewCreated: ${resource.exception}")

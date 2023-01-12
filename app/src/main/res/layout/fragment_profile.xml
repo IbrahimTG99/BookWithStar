@@ -13,7 +13,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_10sdp"
-        android:layout_marginVertical="@dimen/_16sdp"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@id/btn_update"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +29,6 @@
                 android:id="@+id/tv_welcome_user"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
                 android:fontFamily="@font/poppin_reg"
                 android:text="@string/welcome_placeholder"
                 android:textColor="@color/black"
@@ -175,6 +173,7 @@
                     android:textSize="@dimen/_16ssp" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_mobile_number"

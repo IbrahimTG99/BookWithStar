@@ -18,14 +18,6 @@ class HomeViewModel @Inject constructor(
     private val _homeDataFlow = MutableStateFlow<Resource<HomeScreenData>?>(null)
     val homeDataFlow = _homeDataFlow.asStateFlow()
 
-    init {
-        if (repository.customer == null) {
-            viewModelScope.launch {
-                repository.getCustomer()
-            }
-        }
-    }
-
     fun getHomeScreen() = viewModelScope.launch {
         _homeDataFlow.value = Resource.Loading
         _homeDataFlow.value = repository.getHomeScreen()

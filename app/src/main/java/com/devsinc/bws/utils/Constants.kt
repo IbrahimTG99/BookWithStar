@@ -13,6 +13,7 @@ import javax.inject.Singleton
 object Constants {
 
     const val BASE_URL = "https://bookingapi.bookwithstar.com/api/"
+    var isUserLoggedIn = false
 
     fun openKeyboard(textInputLayout: TextInputEditText, context: Context): Boolean {
         val imm = ContextCompat.getSystemService(context, InputMethodManager::class.java)

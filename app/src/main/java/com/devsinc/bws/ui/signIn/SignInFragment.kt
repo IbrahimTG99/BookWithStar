@@ -1,17 +1,15 @@
 package com.devsinc.bws.ui.signIn
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
+import com.devsinc.bws.MainActivity
 import com.devsinc.bws.R
 import com.devsinc.bws.databinding.FragmentSignInBinding
 import com.devsinc.bws.repository.Resource
@@ -20,7 +18,6 @@ import com.devsinc.bws.ui.forgotPassword.ForgotPasswordFragment
 import com.devsinc.bws.utils.Constants
 import com.devsinc.bws.viewmodel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.math.log
 
 @AndroidEntryPoint
 class SignInFragment : BindingFragment<FragmentSignInBinding>() {
@@ -77,10 +74,23 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>() {
                     is Resource.Success -> {
                         // navigate to home
                         findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
-                        Toast.makeText(requireContext(), result.result.toString(), Toast.LENGTH_SHORT).show()
+                        (activity as MainActivity).supportActionBar?.show()
+                        (activity as MainActivity).binding.drawerLayout.setDrawerLockMode(
+                            DrawerLayout.LOCK_MODE_UNLOCKED
+                        )
+
+                        Toast.makeText(
+                            requireContext(),
+                            result.result.toString(),
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                     is Resource.Error -> {
-                        Toast.makeText(requireContext(), result.exception.message, Toast.LENGTH_SHORT).show()
+                        Toast.makeText(
+                            requireContext(),
+                            result.exception.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
                     is Resource.Loading -> {
                         // show loading

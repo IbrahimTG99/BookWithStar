@@ -1,5 +1,6 @@
 package com.devsinc.bws.di
 
+import com.devsinc.bws.data.AppDb
 import com.devsinc.bws.repository.AuthRepository
 import com.devsinc.bws.repository.AuthRepositoryImpl
 import com.devsinc.bws.repository.CustomerRepository

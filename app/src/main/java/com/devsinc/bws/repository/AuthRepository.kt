@@ -6,7 +6,8 @@ import com.devsinc.bws.model.LoginParams
 import kotlinx.coroutines.flow.StateFlow
 
 interface AuthRepository {
-    var customer : Customer?
+    var customer: Customer?
     suspend fun login(credentials: LoginParams) : Resource<Customer>
-    suspend fun logout()
+    suspend fun logout() : Resource<Unit>
+    suspend fun isCustomerLoggedIn() : Boolean
 }
