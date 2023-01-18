@@ -16,6 +16,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
 import com.devsinc.bws.databinding.ActivityMainBinding
+import com.devsinc.bws.model.Customer
 import com.devsinc.bws.repository.Resource
 import com.devsinc.bws.viewmodel.AuthViewModel
 import com.google.android.material.navigation.NavigationView
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val viewModel: AuthViewModel by viewModels()
+    lateinit var customer: Customer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Handle the splash screen transition.
@@ -92,6 +94,7 @@ class MainActivity : AppCompatActivity() {
                         navController.navigate(R.id.homeFragment)
                         tvUserName.text = getString(R.string.full_name_join, event.result.first_name, event.result.last_name)
                         tvUserEmail.text = event.result.cus_email
+                        customer = event.result
 
                         Glide.with(this@MainActivity)
                             .load(event.result.cus_photo)

@@ -54,10 +54,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSport"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             app:boxBackgroundColor="@color/off_white_light">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -89,6 +89,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_find_class"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

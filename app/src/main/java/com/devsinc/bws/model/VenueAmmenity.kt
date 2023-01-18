@@ -1,6 +1,6 @@
 package com.devsinc.bws.model
 
-data class ListItem(
-    val id: Int,
+data class VenueAmmenity(
+    val icon: String,
     val name: String
 )

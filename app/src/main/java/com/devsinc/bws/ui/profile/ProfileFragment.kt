@@ -8,6 +8,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
+import com.devsinc.bws.MainActivity
 import com.devsinc.bws.R
 import com.devsinc.bws.databinding.FragmentProfileBinding
 import com.devsinc.bws.repository.Resource
@@ -28,6 +29,7 @@ class ProfileFragment : BindingFragment<FragmentProfileBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        (activity as MainActivity).supportActionBar?.title = "Edit Profile"
 
         viewModel.getCustomerDetails()
 

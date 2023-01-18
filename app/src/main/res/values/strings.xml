@@ -26,6 +26,7 @@
     <string name="reset_password">Reset Password</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="welcome_placeholder">Welcome, %s !</string>
+    <string name="Pricing_modifier">AED %.1f / %s</string>
     <string name="full_name_join">%s %s</string>
     <string name="email_address">Email Address</string>
     <string name="country">Country</string>
@@ -84,7 +85,7 @@
     <string name="welcome">Welcome,</string>
     <string name="name_surname">Name Surname !</string>
     <string name="venue_image">Venue Image</string>
-    <string name="al_arqam_private_school">Brampton Sports       Academy</string>
+    <string name="al_arqam_private_school">Brampton Sports Academy</string>
     <string name="dubai">Dubai</string>
     <string name="distance">Distance: 0.0 Km</string>
     <string name="details">Details</string>
@@ -116,4 +117,6 @@
     <string name="pro_or_amateur">Be it a pro or an amateur, explore a range of sports you can play with us and our partners</string>
     <string name="featured_venue">Featured Venue</string>
     <string name="discount_placeholder">75m</string>
+    <string name="image_of_location">image of location</string>
+    <string name="proceed">Proceed</string>
 </resources>

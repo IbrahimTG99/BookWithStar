@@ -1,11 +1,19 @@
 package com.devsinc.bws.repository
 
-import com.devsinc.bws.model.Customer
-import com.devsinc.bws.model.CustomerDetails
-import com.devsinc.bws.model.HomeScreenData
+import com.devsinc.bws.model.*
 
 interface CustomerRepository {
     var customer : Customer?
     suspend fun getHomeScreen() : Resource<HomeScreenData>
     suspend fun getCustomerDetails() : Resource<CustomerDetails>
+    suspend fun getVenueByLocation(lat : String, lng : String, sport: Int?) : Resource<List<Venue>>
+    suspend fun getSportList() : Resource<List<DropdownListItem>>
+
+    suspend fun findClasses(lat : String, lng : String, sport: Int?) : Resource<List<ClassListItem>>
+
+    suspend fun getClassActivity() : Resource<List<DropdownListItem>>
+
+    suspend fun getOffers() : Resource<List<Offer>>
+
+    suspend fun getBookClass() : Resource<List<BookClassItem>>
 }

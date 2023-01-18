@@ -13,4 +13,6 @@
     <color name="dark_yellow">#F6BF29</color>
     <color name="accent_yellow">#FDD330</color>
     <color name="accent_orange">#F44336</color>
+    <color name="transparency_90">#E6FFFFFF</color>
+    <color name="drawer_selected">#EDDEA6</color>
 </resources>

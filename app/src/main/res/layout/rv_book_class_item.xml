@@ -63,6 +63,7 @@
                 android:src="@drawable/ic_bullet_point" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvDiscount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppin_reg"
@@ -89,6 +90,7 @@
                 android:src="@drawable/ic_bullet_point" />
 
             <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSessions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppin_reg"

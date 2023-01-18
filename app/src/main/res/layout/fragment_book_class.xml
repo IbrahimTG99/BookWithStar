@@ -23,8 +23,7 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSport"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-            app:boxBackgroundColor="@color/off_white_light"
+            style="@style/exposedDropDownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -40,27 +39,28 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSportType"
-            app:boxBackgroundColor="@color/off_white_light"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp">
+            android:layout_marginTop="@dimen/_8sdp">
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/tieSportType"
                 style="@style/textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/select_sport_type"
+                android:hint="@string/select_venue"
                 android:inputType="none" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBookClass"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:paddingHorizontal="@dimen/_2sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

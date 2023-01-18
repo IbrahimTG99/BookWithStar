@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_120sdp"
-    android:background="@color/off_white"
+    android:background="@color/light_yellow"
     android:fitsSystemWindows="true"
     android:gravity="center">
 
@@ -18,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/imageViewRounded"
-        app:strokeColor="@color/light_yellow"
+        app:strokeColor="@color/accent_orange"
         app:strokeWidth="3dp"
         tools:srcCompat="@tools:sample/avatars" />
 
