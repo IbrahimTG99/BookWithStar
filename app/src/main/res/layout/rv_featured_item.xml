@@ -2,9 +2,9 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_8sdp"
+    android:layout_width="@dimen/_260sdp"
+    android:layout_height="@dimen/_310sdp"
+    android:layout_margin="@dimen/_4sdp"
     android:background="@color/off_white_light"
     android:theme="@style/Theme.BookWithStar"
     app:cardCornerRadius="@dimen/_16sdp"
@@ -12,7 +12,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:paddingBottom="@dimen/_10sdp">
 
         <com.google.android.material.imageview.ShapeableImageView
@@ -40,15 +40,15 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
             app:layout_constraintBottom_toTopOf="@id/linearDistance"
-            app:layout_constraintEnd_toStartOf="@id/iv_sport_icon"
+            app:layout_constraintEnd_toStartOf="@id/iv_call_icon"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_book_venue" />
 
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_sport_icon"
+            android:id="@+id/iv_call_icon"
             android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_height="@dimen/_25sdp"
             android:contentDescription="@string/venue_image"
             android:src="@drawable/ic_baseline_call_24"
             app:layout_constraintBottom_toTopOf="@id/linearDistance"
@@ -65,7 +65,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/rBar"
+            app:layout_constraintBottom_toTopOf="@id/r_bar"
             app:layout_constraintTop_toBottomOf="@id/tv_book_venue_title">
 
             <com.google.android.material.imageview.ShapeableImageView
@@ -87,7 +87,7 @@
 
 
         <RatingBar
-            android:id="@+id/rBar"
+            android:id="@+id/r_bar"
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

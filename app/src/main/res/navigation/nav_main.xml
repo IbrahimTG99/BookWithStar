@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_signInFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -23,4 +26,83 @@
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.devsinc.bws.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.devsinc.bws.ui.about.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/alertDialogFragment"
+        android:name="com.devsinc.bws.ui.utils.AlertDialogFragment"
+        android:label="fragment_alert_dialog"
+        tools:layout="@layout/fragment_alert_dialog" />
+    <fragment
+        android:id="@+id/bookClassFragment"
+        android:name="com.devsinc.bws.ui.bookclass.BookClassFragment"
+        android:label="fragment_book_class"
+        tools:layout="@layout/fragment_book_class" />
+    <fragment
+        android:id="@+id/bookOnlineFragment"
+        android:name="com.devsinc.bws.ui.bookonline.BookOnlineFragment"
+        android:label="fragment_book_online"
+        tools:layout="@layout/fragment_book_online" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.devsinc.bws.ui.contactus.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/findClassFragment"
+        android:name="com.devsinc.bws.ui.findclass.FindClassFragment"
+        android:label="fragment_find_class"
+        tools:layout="@layout/fragment_find_class" />
+    <fragment
+        android:id="@+id/findTeammatesFragment"
+        android:name="com.devsinc.bws.ui.findteammates.FindTeammatesFragment"
+        android:label="fragment_find_teammates"
+        tools:layout="@layout/fragment_find_teammates" />
+    <fragment
+        android:id="@+id/findVenueFragment"
+        android:name="com.devsinc.bws.ui.findvenue.FindVenueFragment"
+        android:label="fragment_find_venue"
+        tools:layout="@layout/fragment_find_venue" />
+    <dialog
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.devsinc.bws.ui.forgotPassword.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
+    <fragment
+        android:id="@+id/myBookingsFragment"
+        android:name="com.devsinc.bws.ui.mybookings.MyBookingsFragment"
+        android:label="fragment_my_bookings"
+        tools:layout="@layout/fragment_my_bookings" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.devsinc.bws.ui.notifications.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/offersFragment"
+        android:name="com.devsinc.bws.ui.offers.OffersFragment"
+        android:label="fragment_offers"
+        tools:layout="@layout/fragment_offers" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.devsinc.bws.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.devsinc.bws.ui.webview.WebViewFragment"
+        android:label="fragment_web_view"
+        tools:layout="@layout/fragment_web_view" />
 </navigation>
