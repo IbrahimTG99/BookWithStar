@@ -5,7 +5,7 @@ data class VenueDetail(
     val longitude: String,
     val sid: Int,
     val venue_address: String,
-    val venue_ammenities: List<VenueAmmenity>,
+    val venue_ammenities: List<Ammenity>,
     val venue_choose: Any,
     val venue_detail: String,
     val venue_email: String,

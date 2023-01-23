@@ -14,6 +14,9 @@ interface BookWithStarAPI {
     @POST("get_stadium_details")
     suspend fun getStadiumDetails(@Query("venueid") venueId: Int): Response<BookWithStarAPIresponse<VenueDetail>>
 
+    @POST("get_class_details")
+    suspend fun getClassDetails(@Query("classid") classId: Int): Response<BookWithStarAPIresponse<ClassDetail>>
+
     @POST("get_venue_by_Location")
     suspend fun getVenueByLocation(@Body params: VenueByLocationParams): Response<BookWithStarAPIresponse<List<Venue>>>
 
@@ -35,4 +38,10 @@ interface BookWithStarAPI {
 
     @POST("bookclass")
     suspend fun getBookClass(): Response<BookWithStarAPIresponse<List<BookClassItem>>>
+
+    @POST("get_push_notfication_data")
+    suspend fun getPushNotificationData(): Response<BookWithStarAPIresponse<String>>
+
+    @POST("my_booking")
+    suspend fun getMyBookings(@Query("customer_id") customerId: Int): Response<BookWithStarAPIresponse<List<BookingItem>>>
 }

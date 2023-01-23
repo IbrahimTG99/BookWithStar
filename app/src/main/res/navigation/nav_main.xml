@@ -105,4 +105,14 @@
         android:name="com.devsinc.bws.ui.webview.WebViewFragment"
         android:label="fragment_web_view"
         tools:layout="@layout/fragment_web_view" />
+    <fragment
+        android:id="@+id/stadiumDetailsFragment"
+        android:name="com.devsinc.bws.ui.stadiumdetails.StadiumDetailsFragment"
+        android:label="fragment_stadium_details"
+        tools:layout="@layout/fragment_stadium_details" />
+    <fragment
+        android:id="@+id/classDetailsFragment"
+        android:name="com.devsinc.bws.ui.classdetails.ClassDetailsFragment"
+        android:label="fragment_class_details"
+        tools:layout="@layout/fragment_class_details" />
 </navigation>

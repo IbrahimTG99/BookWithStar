@@ -1,5 +1,7 @@
 package com.devsinc.bws.ui.home
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +10,7 @@ import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide.init
 import com.devsinc.bws.R
 import com.devsinc.bws.model.FeaturedVenue
 
@@ -18,9 +21,9 @@ class RecyclerAdapterFeaturedVenues(private val featuredVenues: List<FeaturedVen
         RecyclerView.ViewHolder(itemView) {
         val ivBookVenue: ImageView = itemView.findViewById<ImageView>(R.id.iv_book_venue)
         val tvBookVenueTitle: TextView = itemView.findViewById<TextView>(R.id.tv_book_venue_title)
-        val iCallIcon: ImageView = itemView.findViewById<ImageView>(R.id.iv_call_icon)
         val tvLocation: TextView = itemView.findViewById<TextView>(R.id.tv_location)
         val rBar: RatingBar = itemView.findViewById<RatingBar>(R.id.r_bar)
+        val btnCall: ImageView = itemView.findViewById<ImageView>(R.id.iv_call_icon)
 
 
         init {
@@ -56,6 +59,11 @@ class RecyclerAdapterFeaturedVenues(private val featuredVenues: List<FeaturedVen
         holder.rBar.rating = currentVenue.venue_rating
         Glide.with(holder.ivBookVenue.context).load(currentVenue.venue_image)
             .into(holder.ivBookVenue)
+        holder.btnCall.setOnClickListener {
+            val phone = currentVenue.venue_phone
+            val intent = Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null))
+            holder.btnCall.context.startActivity(intent)
+        }
     }
 
     override fun getItemCount() = featuredVenues.size

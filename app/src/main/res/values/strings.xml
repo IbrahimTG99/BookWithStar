@@ -119,4 +119,13 @@
     <string name="discount_placeholder">75m</string>
     <string name="image_of_location">image of location</string>
     <string name="proceed">Proceed</string>
+    <string name="days">Days</string>
+    <string name="time">Time</string>
+    <string name="schedule_name">Schedule Name</string>
+    <string name="time_placeholder">5:00-6:00pm</string>
+    <string name="schedule_placeholder">players 6-9 years old</string>
+    <string name="day_placeholder">TUESDAY</string>
+    <string name="heading_placeholder">Heading</string>
+    <string name="filter">Filter</string>
+    <string name="choose_frequency">Choose Frequency</string>
 </resources>

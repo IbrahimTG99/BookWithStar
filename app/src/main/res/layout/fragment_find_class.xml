@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/off_white"
-    android:paddingHorizontal="@dimen/_10sdp"
-    android:paddingVertical="@dimen/_15sdp"
+    android:padding="@dimen/_8sdp"
     android:theme="@style/Theme.BookWithStar"
     tools:context=".ui.findclass.FindClassFragment">
 
@@ -16,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:padding="@dimen/_8sdp"
         app:layout_constraintBottom_toTopOf="@+id/rv_find_class"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,9 +89,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_find_class"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

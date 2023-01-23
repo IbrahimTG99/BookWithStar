@@ -1,6 +1,6 @@
 package com.devsinc.bws.model
 
-data class VenueAmmenity(
+data class Ammenity(
     val icon: String,
     val name: String
 )

@@ -1,7 +1,8 @@
-package com.devsinc.bws.ui.notifications
+package com.devsinc.bws.ui.classdetails
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.devsinc.bws.model.ClassDetail
 import com.devsinc.bws.repository.CustomerRepository
 import com.devsinc.bws.repository.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -11,14 +12,14 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NotificationsViewModel @Inject constructor(
+class ClassDetailsViewModel @Inject constructor(
     private val repository: CustomerRepository
 ) : ViewModel() {
-    private val _notificationsFlow = MutableStateFlow<Resource<String>?>(null)
-    val notificationsFlow = _notificationsFlow.asStateFlow()
+    private val _classDetailsFlow = MutableStateFlow<Resource<ClassDetail>?>(null)
+    val classDetailsFlow = _classDetailsFlow.asStateFlow()
 
-    fun getNotifications() = viewModelScope.launch {
-        _notificationsFlow.value = Resource.Loading
-        _notificationsFlow.value = repository.getPushNotificationData()
+    fun getClassDetails(classId: Int) = viewModelScope.launch {
+        _classDetailsFlow.value = Resource.Loading
+        _classDetailsFlow.value = repository.getClassDetail(classId)
     }
 }
