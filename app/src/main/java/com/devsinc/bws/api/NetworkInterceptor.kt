@@ -11,6 +11,5 @@ class NetworkInterceptor @Inject constructor() : Interceptor {
         val request = chain.request().newBuilder()
             .addHeader("Authorization", "Bearer ${NetworkConstants.TOKEN}")
         return chain.proceed(request.build())
-
     }
 }

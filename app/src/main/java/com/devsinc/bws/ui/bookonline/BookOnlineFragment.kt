@@ -1,5 +1,6 @@
 package com.devsinc.bws.ui.bookonline
 
+import android.app.TimePickerDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -27,6 +28,8 @@ class BookOnlineFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(BookOnlineViewModel::class.java)
         // TODO: Use the ViewModel
+
+
     }
 
 }

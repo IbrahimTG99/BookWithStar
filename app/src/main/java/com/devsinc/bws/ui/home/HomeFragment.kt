@@ -14,6 +14,7 @@ import com.devsinc.bws.R
 import com.devsinc.bws.databinding.FragmentHomeBinding
 import com.devsinc.bws.repository.Resource
 import com.devsinc.bws.ui.BindingFragment
+import com.devsinc.bws.ui.stadiumdetails.StadiumDetailsFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,7 +31,8 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as MainActivity).supportActionBar?.title = "Hey, %s!".format((activity as MainActivity).customer.first_name)
+        (activity as MainActivity).supportActionBar?.title =
+            "Hey, %s!".format((activity as MainActivity).customer.first_name)
 
         viewModel.getHomeScreen()
 
@@ -61,6 +63,14 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
                         featuredVenueAdapter.setOnItemClickListener(object :
                             RecyclerAdapterFeaturedVenues.OnItemClickListener {
                             override fun onItemClick(position: Int) {
+                                findNavController().navigate(
+                                    R.id.stadiumDetailsFragment,
+                                    Bundle().apply {
+                                        putInt(
+                                            "venue_id",
+                                            resource.result.stadium[position].venue_id
+                                        )
+                                    })
                             }
                         })
                         val featuredClassAdapter =
@@ -69,6 +79,14 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
                         featuredClassAdapter.setOnItemClickListener(object :
                             RecyclerAdapterFeaturedClasses.OnItemClickListener {
                             override fun onItemClick(position: Int) {
+                                findNavController().navigate(
+                                    R.id.classDetailsFragment,
+                                    Bundle().apply {
+                                        putInt(
+                                            "class_id",
+                                            resource.result.featured_class[position].cid
+                                        )
+                                    })
                             }
                         })
                     }

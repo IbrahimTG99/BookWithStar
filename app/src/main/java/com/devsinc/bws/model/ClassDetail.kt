@@ -1,10 +1,10 @@
 package com.devsinc.bws.model
 
-data class Class(
+data class ClassDetail(
     val cid: Int,
     val class_address: String,
     val class_ammenities: List<Ammenity>,
-    val class_choose: List<String>,
+    val class_choose: List<String>?,
     val class_detail: String,
     val class_gmap: String,
     val class_icon: List<String>,

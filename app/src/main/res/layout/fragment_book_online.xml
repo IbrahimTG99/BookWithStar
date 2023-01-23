@@ -1,13 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/off_white_light"
+    android:theme="@style/Theme.BookWithStar"
     tools:context=".ui.bookonline.BookOnlineFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/cardLocation"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="20dp"-->
+    <!--        app:cardBackgroundColor="@android:color/transparent"-->
+    <!--        app:cardCornerRadius="5dp"-->
+    <!--        app:cardElevation="0dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
 
-</FrameLayout>
+    <!--        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner-->
+    <!--            android:id="@+id/spinnerLocation"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="55dp"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:paddingHorizontal="10sp"-->
+    <!--            app:smsp_enableFloatingLabel="false"-->
+    <!--            app:smsp_hint="Select Location"-->
+    <!--            app:smsp_isSearchable="false"-->
+    <!--            app:smsp_itemColor="@color/black"-->
+    <!--            app:smsp_itemListBackgroundColor="@color/white"-->
+    <!--            app:smsp_searchHeaderBackgroundColor="@color/white"-->
+    <!--            app:smsp_searchHeaderTextColor="@color/black"-->
+    <!--            app:smsp_underlineSize="0dp" />-->
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/cardStadium"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="20dp"-->
+    <!--        app:cardBackgroundColor="@android:color/transparent"-->
+    <!--        app:cardCornerRadius="5dp"-->
+    <!--        app:cardElevation="0dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/cardLocation">-->
+
+    <!--        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner-->
+    <!--            android:id="@+id/spinnerStadium"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="55dp"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:paddingHorizontal="10sp"-->
+    <!--            app:smsp_enableFloatingLabel="false"-->
+    <!--            app:smsp_hint="Select Venue"-->
+    <!--            app:smsp_itemColor="@color/black"-->
+    <!--            app:smsp_itemListBackgroundColor="@color/white"-->
+    <!--            app:smsp_searchHeaderBackgroundColor="@color/white"-->
+    <!--            app:smsp_searchHeaderTextColor="@color/black"-->
+    <!--            app:smsp_underlineSize="0dp" />-->
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/cardSport"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="20dp"-->
+    <!--        app:cardBackgroundColor="@android:color/transparent"-->
+    <!--        app:cardCornerRadius="5dp"-->
+    <!--        app:cardElevation="0dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/cardStadium">-->
+
+    <!--        <com.chivorn.smartmaterialspinner.SmartMaterialSpinner-->
+    <!--            android:id="@+id/spinnerSports"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="55dp"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:paddingHorizontal="10sp"-->
+    <!--            app:smsp_enableFloatingLabel="false"-->
+    <!--            app:smsp_hint="@string/select_sports"-->
+    <!--            app:smsp_itemColor="@color/black"-->
+    <!--            app:smsp_itemListBackgroundColor="@color/white"-->
+    <!--            app:smsp_searchHeaderBackgroundColor="@color/white"-->
+    <!--            app:smsp_searchHeaderTextColor="@color/black"-->
+    <!--            app:smsp_underlineSize="0dp" />-->
+    <!--    </androidx.cardview.widget.CardView>-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/rvCourts"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/cardSport"-->
+    <!--        tools:listitem="@layout/courts_item" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvCalender"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:layout_marginStart="20dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginEnd="10dp"-->
+    <!--        android:background="@drawable/border_button"-->
+    <!--        android:gravity="center"-->
+    <!--        android:paddingStart="0dp"-->
+    <!--        android:paddingEnd="10dp"-->
+    <!--        app:drawableEndCompat="@drawable/ic_calendar"-->
+    <!--        app:layout_constraintEnd_toStartOf="@+id/tvTime"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/rvCourts"/>-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvTime"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="48dp"-->
+    <!--        android:layout_marginStart="10dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:layout_marginEnd="20dp"-->
+    <!--        android:background="@drawable/border_button"-->
+    <!--        android:gravity="center"-->
+    <!--        android:paddingStart="0dp"-->
+    <!--        android:paddingEnd="10dp"-->
+    <!--        app:drawableEndCompat="@drawable/ic_time"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintHorizontal_bias="0.5"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tvCalender"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/rvCourts" />-->
+
+    <!--    <RadioGroup-->
+    <!--        android:id="@+id/rdGroup"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="42dp"-->
+    <!--        android:gravity="center_vertical"-->
+    <!--        android:orientation="horizontal"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/tvFreq"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/tvCalender" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvFreq"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="20dp"-->
+    <!--        android:text="@string/choose_frequency"-->
+    <!--        android:textColor="@color/black"-->
+    <!--        android:textSize="16sp"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/rdGroup"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvCalender" />-->
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:id="@+id/rvTimes"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:padding="20dp"-->
+    <!--        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/rdGroup"-->
+    <!--        app:spanCount="2"-->
+    <!--        tools:listitem="@layout/text_view_time" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

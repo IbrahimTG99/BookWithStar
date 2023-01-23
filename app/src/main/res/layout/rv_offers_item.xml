@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="@dimen/_10sdp"
+    android:layout_margin="@dimen/_12sdp"
     android:theme="@style/Theme.BookWithStar"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="@dimen/_5sdp"
