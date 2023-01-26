@@ -1,18 +1,24 @@
 package com.devsinc.bws.ui.home
 
+import android.os.Build
 import android.view.LayoutInflater
+import android.view.RoundedCorner
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.CenterInside
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.devsinc.bws.R
 import com.devsinc.bws.model.FeaturedClass
 import com.devsinc.bws.model.FeaturedVenue
 
-class RecyclerAdapterFeaturedClasses (private val featuredVenues: List<FeaturedClass>) :
+class RecyclerAdapterFeaturedClasses(private val featuredVenues: List<FeaturedClass>) :
     RecyclerView.Adapter<RecyclerAdapterFeaturedClasses.ClassViewHolder>() {
 
     class ClassViewHolder(itemView: View, listener: OnItemClickListener) :
@@ -44,13 +50,20 @@ class RecyclerAdapterFeaturedClasses (private val featuredVenues: List<FeaturedC
         this.listener = listener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterFeaturedClasses.ClassViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerAdapterFeaturedClasses.ClassViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.rv_featured_item, parent, false)
         return RecyclerAdapterFeaturedClasses.ClassViewHolder(itemView, this.listener)
     }
 
-    override fun onBindViewHolder(holder: RecyclerAdapterFeaturedClasses.ClassViewHolder, position: Int) {
+    @RequiresApi(Build.VERSION_CODES.S)
+    override fun onBindViewHolder(
+        holder: RecyclerAdapterFeaturedClasses.ClassViewHolder,
+        position: Int
+    ) {
         val currentClass = featuredVenues[position]
         holder.tvBookVenueTitle.text = currentClass.class_name
         holder.tvLocation.text = currentClass.class_location

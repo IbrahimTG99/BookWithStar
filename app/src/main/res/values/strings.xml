@@ -55,8 +55,6 @@
     <string name="moto">Be it a pro or an amateur, explore a range of sports and activities you can play with us and our partners.</string>
     <string name="featured_venues">Featured Venues</string>
     <string name="featured_classes">Featured Classes</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="reward_description"><![CDATA[The more you play, the more you earn. Play & earn points. For evrey pitch or a class you book via Book With Star, we will give you extra points, fully redeemable at all venues.]]></string>
     <string name="reward_points_title">Reward\nPoints</string>
     <string name="book_my_venue">Book My\nVenue</string>
@@ -98,7 +96,7 @@
     <string name="no_discount">No Discount</string>
     <string name="sessions">4 sessions</string>
     <string name="enable_player_finder">Enable Player Finder</string>
-    <string name="name">Name Surname</string>
+    <string name="name">Name</string>
     <string name="message_now">Message Now</string>
     <string name="player_interest">Player Interest</string>
     <string name="individual_or_team">Individual or Team</string>
@@ -128,4 +126,11 @@
     <string name="heading_placeholder">Heading</string>
     <string name="filter">Filter</string>
     <string name="choose_frequency">Choose Frequency</string>
+    <string name="let_s_talk_let_s_play">Let\'s Talk. Let\'s Play.</string>
+    <string name="looking_for_the_best_sports_pitch_or_venue_in_dubai_get_in_touch_with_bookwithstar_com">Looking for the best sports pitch or venue in Dubai? Get in touch with bookwithstar.com</string>
+    <string name="send">Send</string>
+    <string name="type_your_message">Type Your Message</string>
+    <string name="filter_result">Filter Result</string>
+    <string name="select">Select</string>
+    <string name="preferred_venue_to_play">Preferred venue to play</string>
 </resources>

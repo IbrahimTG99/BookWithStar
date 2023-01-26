@@ -37,11 +37,17 @@ interface BookWithStarAPI {
     suspend fun getOffers(): Response<BookWithStarAPIresponse<List<Offer>>>
 
     @POST("bookclass")
-    suspend fun getBookClass(): Response<BookWithStarAPIresponse<List<BookClassItem>>>
+    suspend fun getBookClass(@Query("classid") classId: Int): Response<BookWithStarAPIresponse<List<BookClassItem>>>
 
     @POST("get_push_notfication_data")
     suspend fun getPushNotificationData(): Response<BookWithStarAPIresponse<String>>
 
     @POST("my_booking")
     suspend fun getMyBookings(@Query("customer_id") customerId: Int): Response<BookWithStarAPIresponse<List<BookingItem>>>
+
+    @GET("getcontactinfo")
+    suspend fun getContactInfo(): Response<BookWithStarAPIresponse<ContactInfo>>
+
+    @POST("get_sport_type")
+    suspend fun getSportType(@Query("sportid") sportId: Int): Response<BookWithStarAPIresponse<List<DropdownListItem>>>
 }

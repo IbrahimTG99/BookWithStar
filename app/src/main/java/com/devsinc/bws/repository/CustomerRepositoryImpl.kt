@@ -64,8 +64,8 @@ class CustomerRepositoryImpl @Inject constructor(
         return getResponse(response)
     }
 
-    override suspend fun getBookClass(): Resource<List<BookClassItem>> {
-        val response = bookWithStarAPI.getBookClass()
+    override suspend fun getBookClass(classId: Int): Resource<List<BookClassItem>> {
+        val response = bookWithStarAPI.getBookClass(classId)
         return getResponse(response)
     }
 
@@ -75,6 +75,9 @@ class CustomerRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getMyBookings(): Resource<List<BookingItem>> {
+        if (customer == null) {
+            customer = customerDao.getCustomer()
+        }
         val response = bookWithStarAPI.getMyBookings(customer!!.cus_id)
         return getResponse2(response)
     }
@@ -86,6 +89,16 @@ class CustomerRepositoryImpl @Inject constructor(
 
     override suspend fun getClassDetail(classId: Int): Resource<ClassDetail> {
         val response = bookWithStarAPI.getClassDetails(classId)
+        return getResponse(response)
+    }
+
+    override suspend fun getContactInfo(): Resource<ContactInfo> {
+        val response = bookWithStarAPI.getContactInfo()
+        return getResponse(response)
+    }
+
+    override suspend fun getSportType(sportId: Int): Resource<List<DropdownListItem>> {
+        val response = bookWithStarAPI.getSportType(sportId)
         return getResponse(response)
     }
 

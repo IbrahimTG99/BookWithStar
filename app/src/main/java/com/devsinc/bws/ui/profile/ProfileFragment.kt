@@ -42,8 +42,10 @@ class ProfileFragment : BindingFragment<FragmentProfileBinding>() {
                         binding.etEmail.setText(resource.result.cus_email)
                         binding.etMobileNumber.setText(resource.result.cus_mobile)
                         binding.etDisplayName.setText(resource.result.cus_name)
-                        binding.tvWelcomeUser.text = getString(R.string.welcome_placeholder, resource.result.cus_name)
-                        Glide.with(requireContext()).load(resource.result.cus_photo).into(binding.ivProfileImage)
+                        binding.tvWelcomeUser.text =
+                            getString(R.string.welcome_placeholder, resource.result.cus_name)
+                        Glide.with(requireContext()).load(resource.result.cus_photo)
+                            .into(binding.ivProfileImage)
                         val adapter = binding.spCountry.adapter
                         for (i in 0 until adapter.count) {
                             if (adapter.getItem(i).toString() == resource.result.cus_country) {

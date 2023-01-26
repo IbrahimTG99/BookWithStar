@@ -11,6 +11,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.Glide.init
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.devsinc.bws.R
 import com.devsinc.bws.model.FeaturedVenue
 
@@ -58,6 +60,7 @@ class RecyclerAdapterFeaturedVenues(private val featuredVenues: List<FeaturedVen
         holder.tvLocation.text = currentVenue.venue_location
         holder.rBar.rating = currentVenue.venue_rating
         Glide.with(holder.ivBookVenue.context).load(currentVenue.venue_image)
+            .transform(CenterCrop(), RoundedCorners(16))
             .into(holder.ivBookVenue)
         holder.btnCall.setOnClickListener {
             val phone = currentVenue.venue_phone
