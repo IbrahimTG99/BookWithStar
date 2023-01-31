@@ -36,7 +36,7 @@
                 android:layout_marginStart="@dimen/_30sdp"
                 android:layout_marginEnd="@dimen/_30sdp"
                 app:cardBackgroundColor="@color/transparency_90"
-                app:cardCornerRadius="@dimen/_10sdp"
+                app:cardCornerRadius="16dp"
                 app:cardElevation="@dimen/_5sdp"
                 app:layout_constraintBottom_toBottomOf="@+id/image"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -164,7 +164,7 @@
     </ScrollView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_update"
+        android:id="@+id/btn_proceed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_16sdp"

@@ -3,6 +3,7 @@ package com.devsinc.bws.ui.bookclass
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devsinc.bws.model.BookClassItem
+import com.devsinc.bws.model.DropdownListItem
 import com.devsinc.bws.model.Offer
 import com.devsinc.bws.repository.CustomerRepository
 import com.devsinc.bws.repository.Resource
@@ -19,8 +20,25 @@ class BookClassViewModel @Inject constructor(
     private val _bookClassFlow = MutableStateFlow<Resource<List<BookClassItem>>?>(null)
     val bookClassFlow = _bookClassFlow.asStateFlow()
 
-    fun getBookClass() = viewModelScope.launch {
+    private val _sportListFlow = MutableStateFlow<Resource<List<DropdownListItem>>?>(null)
+    val sportListFlow = _sportListFlow.asStateFlow()
+
+    private val _sportTypeListFlow = MutableStateFlow<Resource<List<DropdownListItem>>?>(null)
+    val sportTypeListFlow = _sportTypeListFlow.asStateFlow()
+
+
+    fun getBookClass(classId: Int) = viewModelScope.launch {
         _bookClassFlow.value = Resource.Loading
-        _bookClassFlow.value = repository.getBookClass()
+        _bookClassFlow.value = repository.getBookClass(classId)
+    }
+
+    fun getSportList() = viewModelScope.launch {
+        _sportListFlow.value = Resource.Loading
+        _sportListFlow.value = repository.getClassActivity()
+    }
+
+    fun getSportTypeList(sportId: Int) = viewModelScope.launch {
+        _sportTypeListFlow.value = Resource.Loading
+        _sportTypeListFlow.value = repository.getSportType(sportId)
     }
 }

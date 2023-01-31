@@ -75,9 +75,12 @@ class MainActivity : AppCompatActivity() {
             true
         }
         val header = navView.getHeaderView(0)
-        val ivProfileImage = header.findViewById<com.google.android.material.imageview.ShapeableImageView>(R.id.iv_profile_image)
-        val tvUserName = header.findViewById<com.google.android.material.textview.MaterialTextView>(R.id.tv_user_name)
-        val tvUserEmail = header.findViewById<com.google.android.material.textview.MaterialTextView>(R.id.tv_user_email)
+        val ivProfileImage =
+            header.findViewById<com.google.android.material.imageview.ShapeableImageView>(R.id.iv_profile_image)
+        val tvUserName =
+            header.findViewById<com.google.android.material.textview.MaterialTextView>(R.id.tv_user_name)
+        val tvUserEmail =
+            header.findViewById<com.google.android.material.textview.MaterialTextView>(R.id.tv_user_email)
 
         supportActionBar?.hide()
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
@@ -90,16 +93,20 @@ class MainActivity : AppCompatActivity() {
                     is Resource.Success -> {
                         // user is logged in
                         // hide login and sign up menu items
-                        supportActionBar?.show()
-                        navController.navigate(R.id.homeFragment)
-                        tvUserName.text = getString(R.string.full_name_join, event.result.first_name, event.result.last_name)
-                        tvUserEmail.text = event.result.cus_email
                         customer = event.result
-
+                        supportActionBar?.show()
+                        tvUserName.text = getString(
+                            R.string.full_name_join,
+                            event.result.first_name,
+                            event.result.last_name
+                        )
+                        tvUserEmail.text = event.result.cus_email
                         Glide.with(this@MainActivity)
                             .load(event.result.cus_photo)
                             .placeholder(R.drawable.ic_baseline_account_circle_24)
                             .into(ivProfileImage)
+
+                        navController.navigate(R.id.action_signInFragment_to_homeFragment)
                     }
                     is Resource.Loading -> {
                         // show progress bar
@@ -110,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                     else -> {
                         supportActionBar?.hide()
                         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
-                        navController.navigate(R.id.signInFragment)
+                        navController.navigate(R.id.action_global_signInFragment)
                     }
                 }
             }

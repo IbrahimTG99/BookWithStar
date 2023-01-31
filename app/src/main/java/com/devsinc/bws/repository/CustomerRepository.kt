@@ -15,7 +15,7 @@ interface CustomerRepository {
 
     suspend fun getOffers(): Resource<List<Offer>>
 
-    suspend fun getBookClass(): Resource<List<BookClassItem>>
+    suspend fun getBookClass(classId: Int): Resource<List<BookClassItem>>
 
     suspend fun getPushNotificationData(): Resource<String>
 
@@ -24,4 +24,12 @@ interface CustomerRepository {
     suspend fun getVenueDetail(venueId: Int): Resource<VenueDetail>
 
     suspend fun getClassDetail(classId: Int): Resource<ClassDetail>
+
+    suspend fun getContactInfo(): Resource<ContactInfo>
+
+    suspend fun getSportType(sportId: Int): Resource<List<DropdownListItem>>
+
+    suspend fun findPlayer(params: FindPlayerParams): Resource<List<FindPlayerItem>>
+
+    suspend fun getPlayerFinderCommonData(): Resource<PlayerFinderCommonData>
 }

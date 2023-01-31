@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
+    android:background="@color/off_white"
     android:layout_height="match_parent"
     android:theme="@style/Theme.BookWithStar">
 
@@ -32,32 +33,7 @@
             app:layout_constraintBottom_toTopOf="@+id/tv_individual_or_team"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_player_interests">
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_1"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@tools:sample/full_names" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_2"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@tools:sample/full_names" />
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/chip_3"
-                style="@style/Widget.MaterialComponents.Chip.Filter"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:checked="true"
-                android:text="@tools:sample/full_names" />
-
-        </com.google.android.material.chip.ChipGroup>
+            app:layout_constraintTop_toBottomOf="@id/tv_player_interests" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_individual_or_team"
@@ -83,11 +59,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilIndividual"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            app:boxBackgroundColor="@color/off_white_light"
             app:layout_constraintEnd_toStartOf="@id/tilAvailability"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_individual_or_team">
@@ -106,12 +81,11 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilAvailability"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            app:boxBackgroundColor="@color/off_white_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tilIndividual"
             app:layout_constraintTop_toBottomOf="@id/tv_individual_or_team">
@@ -152,11 +126,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilAge"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            app:boxBackgroundColor="@color/off_white_light"
             app:layout_constraintEnd_toStartOf="@id/tilSkills"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvAge">
@@ -175,12 +148,11 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilSkills"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            app:boxBackgroundColor="@color/off_white_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tilAge"
             app:layout_constraintTop_toBottomOf="@id/tvSkills">
@@ -221,11 +193,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilGender"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            app:boxBackgroundColor="@color/off_white_light"
             app:layout_constraintEnd_toStartOf="@id/tilVenue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvGender">
@@ -244,12 +215,11 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilVenue"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
-            app:boxBackgroundColor="@color/off_white_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tilGender"
             app:layout_constraintTop_toBottomOf="@id/tvVenue">
@@ -279,11 +249,10 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilLocation"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            style="@style/exposedDropDownMenu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_10sdp"
-            app:boxBackgroundColor="@color/off_white_light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvLocation">
@@ -323,11 +292,12 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/tieDescribe"
-                style="@style/textInputEditText"
+                android:textColor="@color/black"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="top|start"
                 android:fontFamily="@font/poppin_reg"
-                android:inputType="text"
+                android:inputType="textMultiLine"
                 android:textSize="@dimen/_12ssp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -345,6 +315,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_14ssp"
             app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilDescribe" />

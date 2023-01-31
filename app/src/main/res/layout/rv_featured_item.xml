@@ -7,7 +7,7 @@
     android:layout_margin="@dimen/_4sdp"
     android:background="@color/off_white_light"
     android:theme="@style/Theme.BookWithStar"
-    app:cardCornerRadius="@dimen/_16sdp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="@dimen/_5sdp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,7 +21,6 @@
             android:layout_height="@dimen/_180sdp"
             android:contentDescription="@string/venue_image"
             android:scaleType="centerCrop"
-            app:layout_constraintBottom_toTopOf="@id/tv_book_venue_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -63,9 +62,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintBottom_toTopOf="@id/r_bar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/r_bar"
             app:layout_constraintTop_toBottomOf="@id/tv_book_venue_title">
 
             <com.google.android.material.imageview.ShapeableImageView

@@ -56,24 +56,22 @@
 
     <style name="exposedDropDownMenu" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="boxStrokeWidthFocused">0dp</item>
-        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxStrokeWidth">1dp</item>
         <item name="boxBackgroundColor">@color/off_white_light</item>
         <item name="boxCornerRadiusBottomEnd">8dp</item>
         <item name="boxCornerRadiusTopEnd">8dp</item>
         <item name="boxCornerRadiusBottomStart">8dp</item>
         <item name="boxCornerRadiusTopStart">8dp</item>
         <item name="android:layout_gravity">center</item>
-        <item name="hintEnabled">false</item>
+        <item name="endIconTint">@color/black</item>
     </style>
 
     <!--  bottom sheet  -->
-    <style name="AppBottomSheetDialogTheme"
-        parent="Theme.Design.Light.BottomSheetDialog">
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/AppModalStyle</item>
     </style>
 
-    <style name="AppModalStyle"
-        parent="Widget.Design.BottomSheet.Modal">
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@drawable/bottom_sheet_design</item>
         <item name="behavior_peekHeight">@dimen/_400sdp</item>
     </style>
@@ -83,7 +81,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.BookWithStar.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar" >
+    <style name="Theme.BookWithStar.AppBarOverlay" parent="ThemeOverlay.AppCompat.DayNight.ActionBar">
         <item name="fontFamily">@font/poppin_bold</item>
         <item name="elevation">0dp</item>
     </style>

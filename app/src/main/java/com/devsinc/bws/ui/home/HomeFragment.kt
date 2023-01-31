@@ -31,10 +31,9 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getHomeScreen()
         (activity as MainActivity).supportActionBar?.title =
             "Hey, %s!".format((activity as MainActivity).customer.first_name)
-
-        viewModel.getHomeScreen()
 
         binding.cardBookVenue.setOnClickListener {
             findNavController().navigate(R.id.bookOnlineFragment)

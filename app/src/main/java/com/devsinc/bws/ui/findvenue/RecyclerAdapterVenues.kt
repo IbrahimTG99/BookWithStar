@@ -1,11 +1,14 @@
 package com.devsinc.bws.ui.findvenue
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.bumptech.glide.Glide
@@ -22,9 +25,14 @@ class RecyclerAdapterVenues(private val venueList: List<Venue>) :
         val tvVenueLocation: TextView = itemView.findViewById<TextView>(R.id.tvLocation)
         val tvVenueDistance: TextView = itemView.findViewById<TextView>(R.id.tvDistance)
         val linearLayout: LinearLayout = itemView.findViewById<LinearLayout>(R.id.linearIcons)
+        val btnBook: Button = itemView.findViewById<Button>(R.id.btn_book)
+        val btnDetail: Button = itemView.findViewById<Button>(R.id.btn_details)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerAdapterVenues.VenueViewHolder {
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): RecyclerAdapterVenues.VenueViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.rv_find_venue_item, parent, false)
         return RecyclerAdapterVenues.VenueViewHolder(itemView)
@@ -35,6 +43,13 @@ class RecyclerAdapterVenues(private val venueList: List<Venue>) :
         holder.tvVenueName.text = currentVenue.venue_name
         holder.tvVenueLocation.text = currentVenue.venue_location
         holder.tvVenueDistance.text = currentVenue.distance
+        holder.btnDetail.setOnClickListener  {
+            val bundle = Bundle()
+            bundle.putInt("venue_id", currentVenue.sid)
+            Navigation.findNavController(holder.btnDetail)
+                .navigate(R.id.stadiumDetailsFragment, bundle)
+        }
+
         Glide.with(holder.ivVenueImage.context).load(currentVenue.venue_image)
             .into(holder.ivVenueImage)
 
