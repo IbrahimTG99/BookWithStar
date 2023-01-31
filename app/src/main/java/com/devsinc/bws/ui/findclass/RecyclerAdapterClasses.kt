@@ -49,6 +49,15 @@ class RecyclerAdapterClasses(private val classList: List<ClassListItem>) :
             findNavController(holder.btnDetails).navigate(R.id.classDetailsFragment, bundle)
         }
 
+        holder.btnBook.setOnClickListener {
+
+            val bundle = Bundle()
+            bundle.putInt("classId", currentClass.cid)
+            bundle.putString("className", currentClass.class_name)
+            findNavController(holder.btnBook).navigate(R.id.classPackageFragment, bundle)
+
+        }
+
         holder.linearLayout.removeAllViews()
         for (i in 0 until currentClass.class_icon.size) {
             val imageView = ImageView(holder.linearLayout.context)

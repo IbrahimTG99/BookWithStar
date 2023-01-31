@@ -133,4 +133,5 @@
     <string name="filter_result">Filter Result</string>
     <string name="select">Select</string>
     <string name="preferred_venue_to_play">Preferred venue to play</string>
+    <string name="booking_moto">Are you looking to find the best package for training?</string>
 </resources>

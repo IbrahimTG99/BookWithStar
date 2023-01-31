@@ -102,6 +102,16 @@ class CustomerRepositoryImpl @Inject constructor(
         return getResponse(response)
     }
 
+    override suspend fun findPlayer(params: FindPlayerParams): Resource<List<FindPlayerItem>> {
+        val response = bookWithStarAPI.findPlayer(params)
+        return getResponse(response)
+    }
+
+    override suspend fun getPlayerFinderCommonData(): Resource<PlayerFinderCommonData> {
+        val response = bookWithStarAPI.getPlayerFinderCommonData()
+        return getResponse(response)
+    }
+
     private fun <T> getResponse2(response: Response<BookWithStarAPIresponse<T>>): Resource<T> {
         return try {
             if (response.isSuccessful) {

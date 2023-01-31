@@ -120,4 +120,13 @@
         app:destination="@id/signInFragment"
         app:popUpTo="@id/nav_main"
         app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/classPackageFragment"
+        android:name="com.devsinc.bws.ui.classpackage.ClassPackageFragment"
+        android:label="fragment_class_package"
+        tools:layout="@layout/fragment_class_package" />
+    <fragment
+        android:id="@+id/formPlayerFinderFragment"
+        android:name="com.devsinc.bws.ui.findteammates.FormPlayerFinderFragment"
+        android:label="FormPlayerFinderFragment" />
 </navigation>

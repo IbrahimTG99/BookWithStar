@@ -43,7 +43,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/fab"
+        android:id="@+id/fab_filter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"

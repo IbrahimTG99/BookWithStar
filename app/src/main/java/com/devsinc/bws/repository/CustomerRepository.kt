@@ -28,4 +28,8 @@ interface CustomerRepository {
     suspend fun getContactInfo(): Resource<ContactInfo>
 
     suspend fun getSportType(sportId: Int): Resource<List<DropdownListItem>>
+
+    suspend fun findPlayer(params: FindPlayerParams): Resource<List<FindPlayerItem>>
+
+    suspend fun getPlayerFinderCommonData(): Resource<PlayerFinderCommonData>
 }

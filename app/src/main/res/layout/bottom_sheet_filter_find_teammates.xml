@@ -1,274 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:theme="@style/Theme.BookWithStar"
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottom_sheet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/off_white"
-        app:cardCornerRadius="@dimen/_10sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_gravity="center"
+        android:padding="@dimen/_8sdp">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/bottom_sheet"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppin_bold"
+            android:gravity="center"
+            android:text="@string/filter"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_close"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title"
+            app:layout_constraintEnd_toStartOf="@+id/tv_title"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvGender"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/select_gender"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_title" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSelectGender"
+            style="@style/exposedDropDownMenu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_margin="@dimen/_10sdp">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvGender">
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_title"
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/tieSelectGender"
+                style="@style/textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/poppin_bold"
-                android:gravity="center"
-                android:text="@string/filter"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_20sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:fontFamily="@font/poppin_reg"
+                android:hint="@string/please_select"
+                android:inputType="none"
+                android:textSize="@dimen/_12ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <ImageView
-                android:id="@+id/iv_close"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_arrow_back"
-                app:layout_constraintBottom_toBottomOf="@id/tv_title"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/tv_title" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvAvailability"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/select_availability"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSelectGender" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvGender"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_20sdp"
-                android:fontFamily="@font/poppin_bold"
-                android:text="@string/select_gender"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_title" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSelectAvailability"
+            style="@style/exposedDropDownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvAvailability">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilSelectGender"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/tieSelectAvailability"
+                style="@style/textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/poppin_reg"
+                android:hint="@string/please_select"
+                android:inputType="none"
+                android:textSize="@dimen/_12ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSkills"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/select_skills"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSelectAvailability" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSelectSkills"
+            style="@style/exposedDropDownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSkills">
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/tieSelectSkills"
+                style="@style/textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="@dimen/_6sdp"
-                app:boxCornerRadiusBottomStart="@dimen/_6sdp"
-                app:boxCornerRadiusTopEnd="@dimen/_6sdp"
-                app:boxCornerRadiusTopStart="@dimen/_6sdp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconTint="@color/black"
-                app:hintEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvGender">
+                android:fontFamily="@font/poppin_reg"
+                android:hint="@string/please_select"
+                android:inputType="none"
+                android:textSize="@dimen/_12ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <AutoCompleteTextView
-                    android:id="@+id/genderDropDown"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/poppin_reg"
-                    android:hint="@string/select"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvVenue"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/preferred_venue_to_play"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSelectSkills" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvAvailability"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/poppin_bold"
-                android:text="@string/select_availability"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilSelectGender" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSelectVenue"
+            style="@style/exposedDropDownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvVenue">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilSelectAvailability"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/tieSelectVenue"
+                style="@style/textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="@dimen/_6sdp"
-                app:boxCornerRadiusBottomStart="@dimen/_6sdp"
-                app:boxCornerRadiusTopEnd="@dimen/_6sdp"
-                app:boxCornerRadiusTopStart="@dimen/_6sdp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconTint="@color/black"
-                app:hintEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvAvailability">
+                android:fontFamily="@font/poppin_reg"
+                android:hint="@string/please_select"
+                android:inputType="none"
+                android:textSize="@dimen/_12ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <AutoCompleteTextView
-                    android:id="@+id/availabilityDropDown"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/poppin_reg"
-                    android:hint="@string/select"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSports"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/select_sports"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSelectVenue" />
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvSkills"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/poppin_bold"
-                android:text="@string/select_skills"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilSelectAvailability" />
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSelectSports"
+            style="@style/exposedDropDownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSports">
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilSelectSkills"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/tieSelectSports"
+                style="@style/textInputEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="@dimen/_6sdp"
-                app:boxCornerRadiusBottomStart="@dimen/_6sdp"
-                app:boxCornerRadiusTopEnd="@dimen/_6sdp"
-                app:boxCornerRadiusTopStart="@dimen/_6sdp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconTint="@color/black"
-                app:hintEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSkills">
+                android:fontFamily="@font/poppin_reg"
+                android:hint="@string/please_select"
+                android:inputType="none"
+                android:textSize="@dimen/_12ssp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <AutoCompleteTextView
-                    android:id="@+id/skillsDropDown"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/poppin_reg"
-                    android:hint="@string/select"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvVenue"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/poppin_bold"
-                android:text="@string/preferred_venue_to_play"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilSelectSkills" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilSelectVenue"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="@dimen/_6sdp"
-                app:boxCornerRadiusBottomStart="@dimen/_6sdp"
-                app:boxCornerRadiusTopEnd="@dimen/_6sdp"
-                app:boxCornerRadiusTopStart="@dimen/_6sdp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconTint="@color/black"
-                app:hintEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvVenue">
-
-                <AutoCompleteTextView
-                    android:id="@+id/venueDropDown"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/poppin_reg"
-                    android:hint="@string/select"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvSports"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/poppin_bold"
-                android:text="@string/select_sports"
-                android:textSize="@dimen/_12ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilSelectVenue" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/tilSelectSports"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                app:boxBackgroundColor="@color/white"
-                app:boxCornerRadiusBottomEnd="@dimen/_6sdp"
-                app:boxCornerRadiusBottomStart="@dimen/_6sdp"
-                app:boxCornerRadiusTopEnd="@dimen/_6sdp"
-                app:boxCornerRadiusTopStart="@dimen/_6sdp"
-                app:boxStrokeWidth="0dp"
-                app:boxStrokeWidthFocused="0dp"
-                app:endIconTint="@color/black"
-                app:hintEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvSports">
-
-                <AutoCompleteTextView
-                    android:id="@+id/sportsDropDown"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/poppin_reg"
-                    android:hint="@string/select"
-                    android:inputType="none" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/FilterBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="@dimen/_10sdp"
-                android:background="@drawable/gradient"
-                android:fontFamily="@font/poppin_bold"
-                android:text="@string/filter_result"
-                android:textAllCaps="false"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_14ssp"
-                app:backgroundTint="@null"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tilSelectSports" />
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/FilterBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_10sdp"
+            android:background="@drawable/gradient"
+            android:fontFamily="@font/poppin_bold"
+            android:text="@string/filter_result"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14ssp"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tilSelectSports" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

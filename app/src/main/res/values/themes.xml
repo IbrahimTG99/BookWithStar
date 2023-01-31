@@ -63,7 +63,6 @@
         <item name="boxCornerRadiusBottomStart">8dp</item>
         <item name="boxCornerRadiusTopStart">8dp</item>
         <item name="android:layout_gravity">center</item>
-        <item name="hintEnabled">false</item>
         <item name="endIconTint">@color/black</item>
     </style>
 

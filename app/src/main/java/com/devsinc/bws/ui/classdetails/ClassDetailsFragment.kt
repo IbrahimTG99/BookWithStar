@@ -11,10 +11,13 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
 import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
+import com.devsinc.bws.MainActivity
 import com.devsinc.bws.R
 import com.devsinc.bws.databinding.FragmentClassDetailsBinding
+import com.devsinc.bws.model.ClassDetail
 import com.devsinc.bws.model.DetailsData
 import com.devsinc.bws.repository.Resource
 import com.devsinc.bws.ui.BindingFragment
@@ -28,6 +31,7 @@ class ClassDetailsFragment : BindingFragment<FragmentClassDetailsBinding>() {
     }
 
     private val viewModel: ClassDetailsViewModel by viewModels()
+    private lateinit var classDetails: ClassDetail
 
     override val bindingInflater: (LayoutInflater) -> ViewBinding
         get() = FragmentClassDetailsBinding::inflate
@@ -95,7 +99,15 @@ class ClassDetailsFragment : BindingFragment<FragmentClassDetailsBinding>() {
                                 )
                             )
                         }
+                        classDetails = resource.result
 
+                        binding.btnProceed.setOnClickListener {
+                            val bundle = Bundle()
+                            bundle.putInt("classId", classDetails.cid)
+                            bundle.putString("className", classDetails.class_name)
+                            Navigation.findNavController(view)
+                                .navigate(R.id.classPackageFragment, bundle)
+                        }
                         binding.rvDetails.adapter = RecyclerAdapterClassDetails(detailsList)
                         binding.rvSchedule.adapter =
                             RecyclerAdapterClassSchedule(resource.result.schedule)

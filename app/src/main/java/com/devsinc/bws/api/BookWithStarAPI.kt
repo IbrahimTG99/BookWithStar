@@ -50,4 +50,10 @@ interface BookWithStarAPI {
 
     @POST("get_sport_type")
     suspend fun getSportType(@Query("sportid") sportId: Int): Response<BookWithStarAPIresponse<List<DropdownListItem>>>
+
+    @POST("find_player")
+    suspend fun findPlayer(@Body params: FindPlayerParams): Response<BookWithStarAPIresponse<List<FindPlayerItem>>>
+
+    @POST("get_player_finder_common_data")
+    suspend fun getPlayerFinderCommonData(): Response<BookWithStarAPIresponse<PlayerFinderCommonData>>
 }
