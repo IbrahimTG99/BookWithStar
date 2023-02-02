@@ -7,6 +7,7 @@ import com.devsinc.bws.utils.NetworkConstants
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.json.JSONObject
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -71,7 +72,7 @@ class CustomerRepositoryImpl @Inject constructor(
 
     override suspend fun getPushNotificationData(): Resource<String> {
         val response = bookWithStarAPI.getPushNotificationData()
-        return getResponse2(response)
+        return getResponse(response)
     }
 
     override suspend fun getMyBookings(): Resource<List<BookingItem>> {
@@ -79,7 +80,7 @@ class CustomerRepositoryImpl @Inject constructor(
             customer = customerDao.getCustomer()
         }
         val response = bookWithStarAPI.getMyBookings(customer!!.cus_id)
-        return getResponse2(response)
+        return getResponse(response)
     }
 
     override suspend fun getVenueDetail(venueId: Int): Resource<VenueDetail> {
@@ -112,22 +113,14 @@ class CustomerRepositoryImpl @Inject constructor(
         return getResponse(response)
     }
 
-    private fun <T> getResponse2(response: Response<BookWithStarAPIresponse<T>>): Resource<T> {
-        return try {
-            if (response.isSuccessful) {
-                response.body()?.let { result ->
-                    if (result.success == true) {
-                        Resource.Success(result.data)
-                    } else {
-                        Resource.Error(Exception(result.message.toString()))
-                    }
-                } ?: Resource.Error(Exception("An unknown error occurred"))
-            } else {
-                Resource.Error(Exception("No Information Available"))
-            }
-        } catch (e: Exception) {
-            Resource.Error(e)
-        }
+    override suspend fun advanceSearch(venueId: Int, sportId: Int): Resource<AdvanceSearchItem> {
+        val response = bookWithStarAPI.advanceSearch(venueId, sportId)
+        return getResponse(response)
+    }
+
+    override suspend fun getTimeSlots(params: TimeSlotParams): Resource<List<TimeSlot>> {
+        val response = bookWithStarAPI.getTimeSlot(params)
+        return getResponse(response)
     }
 
     private fun <T> getResponse(response: Response<BookWithStarAPIresponse<T>>): Resource<T> {
@@ -141,7 +134,7 @@ class CustomerRepositoryImpl @Inject constructor(
                     }
                 } ?: Resource.Error(Exception("An unknown error occurred"))
             } else {
-                Resource.Error(Exception(response.errorBody().toString()))
+                Resource.Error(Exception(JSONObject(response.errorBody()!!.charStream().readText()).getString("message")))
             }
         } catch (e: Exception) {
             Resource.Error(e)

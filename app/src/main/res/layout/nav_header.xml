@@ -37,7 +37,7 @@
             android:fontFamily="@font/poppin_bold"
             android:text="@string/name_placeholder"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14ssp" />
+            android:textSize="@dimen/_10ssp" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_user_email"
@@ -46,7 +46,7 @@
             android:fontFamily="@font/poppin_reg"
             android:text="ibrahim.tariq@devsinc.com"
             android:textColor="@color/black"
-            android:textSize="@dimen/_10ssp" />
+            android:textSize="@dimen/_8ssp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -58,7 +58,7 @@
                 android:fontFamily="@font/poppin_bold"
                 android:text="@string/reward_points"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_10ssp" />
+                android:textSize="@dimen/_8ssp" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_user_points"
@@ -68,7 +68,7 @@
                 android:text="@string/_0"
                 android:layout_marginStart="@dimen/_2sdp"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_10ssp" />
+                android:textSize="@dimen/_8ssp" />
         </LinearLayout>
 
 

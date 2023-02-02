@@ -56,4 +56,22 @@ interface BookWithStarAPI {
 
     @POST("get_player_finder_common_data")
     suspend fun getPlayerFinderCommonData(): Response<BookWithStarAPIresponse<PlayerFinderCommonData>>
+
+    @POST("advancesearch")
+    suspend fun advanceSearch(
+        @Query("venueid") venueId: Int,
+        @Query("sportid") sportId: Int
+    ): Response<BookWithStarAPIresponse<AdvanceSearchItem>>
+
+    @POST("get_time_slot")
+    suspend fun getTimeSlot(@Body params: TimeSlotParams): Response<BookWithStarAPIresponse<List<TimeSlot>>>
+
+    @POST("addons")
+    suspend fun getVenueAddOns(@Query("venueid") venueId: Int): Response<BookWithStarAPIresponse<List<Addon>>>
+
+    @POST("class_addons")
+    suspend fun getClassAddOns(@Query("class_id") classId: Int): Response<BookWithStarAPIresponse<List<Addon>>>
+
+    @POST("get_timeslot_reservation")
+    suspend fun getTimeSlotReservation(@Query("slot_ids") slotId: Int, @Query("customer_id") customerId: Int): Response<ReservationApiresponse>
 }

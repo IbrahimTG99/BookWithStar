@@ -32,4 +32,8 @@ interface CustomerRepository {
     suspend fun findPlayer(params: FindPlayerParams): Resource<List<FindPlayerItem>>
 
     suspend fun getPlayerFinderCommonData(): Resource<PlayerFinderCommonData>
+
+    suspend fun advanceSearch(venueId: Int, sportId: Int): Resource<AdvanceSearchItem>
+
+    suspend fun getTimeSlots(params: TimeSlotParams): Resource<List<TimeSlot>>
 }

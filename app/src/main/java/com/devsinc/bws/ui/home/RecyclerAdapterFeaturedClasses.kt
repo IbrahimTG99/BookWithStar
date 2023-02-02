@@ -59,7 +59,6 @@ class RecyclerAdapterFeaturedClasses(private val featuredVenues: List<FeaturedCl
         return RecyclerAdapterFeaturedClasses.ClassViewHolder(itemView, this.listener)
     }
 
-    @RequiresApi(Build.VERSION_CODES.S)
     override fun onBindViewHolder(
         holder: RecyclerAdapterFeaturedClasses.ClassViewHolder,
         position: Int

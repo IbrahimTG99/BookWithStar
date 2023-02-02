@@ -54,6 +54,16 @@
         <item name="android:paddingBottom">16dp</item>
     </style>
 
+    <style name="DatePickerTheme" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="colorOnPrimary">@color/off_white</item>
+        <item name="colorPrimary">@color/accent_yellow</item>
+    </style>
+
+    <style name="TimePickerTheme" parent="ThemeOverlay.MaterialComponents.TimePicker">
+        <item name="colorOnPrimary">@color/off_white</item>
+        <item name="colorPrimary">@color/accent_yellow</item>
+    </style>
+
     <style name="exposedDropDownMenu" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="boxStrokeWidthFocused">0dp</item>
         <item name="boxStrokeWidth">1dp</item>
