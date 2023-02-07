@@ -34,10 +34,9 @@ class AuthRepositoryImpl @Inject constructor(
             if (response.isSuccessful) {
                 response.body()?.let { result ->
                     if (result.success == true) {
-                        val customer = result.data
-                        customerDao.insertCustomer(customer)
-                        NetworkConstants.TOKEN = customer.token
-                        Resource.Success(customer)
+                        customerDao.insertCustomer(result.data)
+                        NetworkConstants.TOKEN = result.data.token
+                        Resource.Success(result.data)
                     } else {
                         Resource.Error(Exception(result.message))
                     }

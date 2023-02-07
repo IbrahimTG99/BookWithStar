@@ -32,8 +32,29 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getHomeScreen()
-        (activity as MainActivity).supportActionBar?.title =
-            "Hey, %s!".format((activity as MainActivity).customer.first_name)
+        viewModel.getCustomer()
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.customerFlow.collect { resource ->
+                when (resource) {
+                    is Resource.Success -> {
+                        (activity as MainActivity).binding.navView.getHeaderView(0)
+                            .findViewById<TextView>(R.id.tv_user_name).text = "%s %s".format(
+                            resource.result.first_name, resource.result.last_name
+                        )
+                        (activity as MainActivity).supportActionBar?.title =
+                            "Hey, %s!".format(resource.result.first_name)
+                    }
+                    is Resource.Error -> {
+                        Log.d("HomeFragment", resource.exception.message.toString())
+                    }
+                    is Resource.Loading -> {
+                        Log.d("HomeFragment", "Loading")
+                    }
+                    else -> {}
+                }
+            }
+        }
 
         binding.cardBookVenue.setOnClickListener {
             findNavController().navigate(R.id.bookOnlineFragment)

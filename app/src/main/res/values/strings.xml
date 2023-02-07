@@ -56,13 +56,13 @@
     <string name="moto">Be it a pro or an amateur, explore a range of sports and activities you can play with us and our partners.</string>
     <string name="featured_venues">Featured Venues</string>
     <string name="featured_classes">Featured Classes</string>
-    <string name="reward_description"><![CDATA[The more you play, the more you earn. Play & earn points. For evrey pitch or a class you book via Book With Star, we will give you extra points, fully redeemable at all venues.]]></string>
+    <string name="reward_description"><![CDATA[The more you play, the more you earn. Play & earn points. For every pitch or a class you book via Book With Star, we will give you extra points, fully redeemable at all venues.]]></string>
     <string name="reward_points_title">Reward\nPoints</string>
     <string name="book_my_venue">Book My\nVenue</string>
     <string name="book_my_class">Book My\nClass</string>
     <string name="activate_my_profile">Activate My\nProfile</string>
     <string name="book_venue_description">Our online booking system allows you to easily search for available sports facilities and pitches by date, time and location. With a click-of a button, you ca easily book and pay online.</string>
-    <string name="book_class_description">from football to basket ball, cricket, tennis to badminton, we have a greate selection of sports facilieties and pitches acoss Dubai and Sharjah, catering for a wide range of sports.</string>
+    <string name="book_class_description">from football to basket ball, cricket, tennis to badminton, we have a great selection of sports facilities and pitches across Dubai and Sharjah, catering for a wide range of sports.</string>
     <string name="profile_description">And in case you need extra players, we\'ve got you covered. Our \"Find My Team\" feature allows you to build your own profile and find and connect with like-minded recreational players instantly.</string>
     <string name="select_sports">Select Sports</string>
     <string name="select_sport_type">Select Sport Type</string>
@@ -74,7 +74,7 @@
     <string name="new_on_here">New on here?</string>
     <string name="already_account">Already have an account?</string>
     <string name="sign_in"><u>Log In</u></string>
-    <string name="fill">Fill in all fileds to complete your registration.</string>
+    <string name="fill">Fill in all filed to complete your registration.</string>
     <string name="ph_number">00971 00 0000000</string>
     <string name="enter_password">Enter Password</string>
     <string name="privacy_policy"><u>Privacy Policy</u></string>
@@ -112,6 +112,7 @@
     <string name="describe_yourself">Describe Yourself</string>
     <string name="update_player">Update Player</string>
     <string name="expiry_date">Expiry Date: 2022–12–31</string>
+    <string name="date_placeholder">2022–12–31</string>
     <string name="choose_offer">Choose the best offer! Whatever you want</string>
     <string name="pro_or_amateur">Be it a pro or an amateur, explore a range of sports you can play with us and our partners</string>
     <string name="featured_venue">Featured Venue</string>
@@ -121,8 +122,8 @@
     <string name="days">Days</string>
     <string name="time">Time</string>
     <string name="schedule_name">Schedule Name</string>
-    <string name="time_placeholder">5:00-6:00pm</string>
-    <string name="schedule_placeholder">players 6-9 years old</string>
+    <string name="time_placeholder">5:00–6:00pm</string>
+    <string name="schedule_placeholder">players 6–9 years old</string>
     <string name="day_placeholder">TUESDAY</string>
     <string name="heading_placeholder">Heading</string>
     <string name="filter">Filter</string>
@@ -143,4 +144,10 @@
     <string name="not_available">UnAvailable</string>
     <string name="group">Group</string>
     <string name="reserved">Reserved</string>
+    <string name="court_name">Court Name</string>
+    <string name="checkout">Checkout</string>
+    <string name="total_0">Total: %s</string>
+    <string name="added_slots">Added Slots</string>
+    <string name="redeem_coupon">Redeem Coupon</string>
+    <string name="addons">Addons</string>
 </resources>

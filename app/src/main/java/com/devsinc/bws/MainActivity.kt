@@ -24,11 +24,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityMainBinding
     private lateinit var appBarConfiguration: AppBarConfiguration
     private val viewModel: AuthViewModel by viewModels()
-    lateinit var customer: Customer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Handle the splash screen transition.
@@ -74,6 +72,12 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Delete account", Toast.LENGTH_SHORT).show()
             true
         }
+        navView.menu.findItem(R.id.homeFragment).setOnMenuItemClickListener {
+            navController.navigate(R.id.homeFragment)
+            drawerLayout.close()
+            true
+        }
+
         val header = navView.getHeaderView(0)
         val ivProfileImage =
             header.findViewById<com.google.android.material.imageview.ShapeableImageView>(R.id.iv_profile_image)
@@ -85,16 +89,12 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.hide()
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED)
 
-        viewModel.isCustomerLoggedIn()
+        checkIfCustomerLoggedIn()
 
         lifecycleScope.launchWhenStarted {
             viewModel.loginFlow.collect { event ->
                 when (event) {
                     is Resource.Success -> {
-                        // user is logged in
-                        // hide login and sign up menu items
-                        customer = event.result
-                        supportActionBar?.show()
                         tvUserName.text = getString(
                             R.string.full_name_join,
                             event.result.first_name,
@@ -105,8 +105,9 @@ class MainActivity : AppCompatActivity() {
                             .load(event.result.cus_photo)
                             .placeholder(R.drawable.ic_baseline_account_circle_24)
                             .into(ivProfileImage)
+                        supportActionBar?.show()
 
-                        navController.navigate(R.id.action_signInFragment_to_homeFragment)
+                        navController.navigate(R.id.homeFragment)
                     }
                     is Resource.Loading -> {
                         // show progress bar
@@ -122,7 +123,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+    }
 
+    fun checkIfCustomerLoggedIn() {
+        viewModel.isCustomerLoggedIn()
     }
 
     override fun onSupportNavigateUp(): Boolean {

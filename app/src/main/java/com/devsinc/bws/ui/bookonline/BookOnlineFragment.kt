@@ -13,6 +13,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
 import androidx.viewbinding.ViewBinding
 import com.devsinc.bws.MainActivity
 import com.devsinc.bws.R
@@ -43,7 +45,8 @@ class BookOnlineFragment : BindingFragment<FragmentBookOnlineBinding>() {
     }
 
     private var dropDownOptions: HashMap<String, List<HashMap<String, List<String>>>> = hashMapOf()
-    private var venueList: List<Venue>? = null
+    private var selectedCourt: Court? = null
+    private var proceed: Boolean = true
 
     private val viewModel: BookOnlineViewModel by viewModels()
 
@@ -59,7 +62,6 @@ class BookOnlineFragment : BindingFragment<FragmentBookOnlineBinding>() {
             viewModel.venueByLocationFlow.collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
-                        venueList = resource.result
                         resource.result.forEach { venue ->
                             if (!dropDownOptions.containsKey(venue.venue_location)) {
                                 dropDownOptions[venue.venue_location] = listOf(
@@ -127,7 +129,7 @@ class BookOnlineFragment : BindingFragment<FragmentBookOnlineBinding>() {
                                                             binding.rvTimes.adapter = null
                                                             if (sport != "No Sports Available") {
                                                                 val venueSelected =
-                                                                    venueList!!.filter { it.venue_name == venue }[0]
+                                                                    resource.result.filter { it.venue_name == venue }[0]
                                                                 val sportId =
                                                                     venueSelected.venue_sports.filter { it.activity_name == sport }[0].aid
                                                                 val venueId = venueSelected.sid
@@ -184,19 +186,21 @@ class BookOnlineFragment : BindingFragment<FragmentBookOnlineBinding>() {
                             override fun onItemClick(position: Int) {
                                 val court = resource.result.courts[position]
                                 binding.rdGroup.removeAllViews()
-                                binding.tvFrequency.visibility = View.VISIBLE
-                                court.special_frequency.forEach {
-                                    val radioButton = RadioButton(context)
-                                    radioButton.text = it
-                                    binding.rdGroup.addView(radioButton)
-                                }
+
                                 val courtId = court.cid
                                 val time = binding.tvTime.text.toString()
                                 val date = binding.tvCalender.text.toString()
                                 if (date != "Select Date" && time != "Select Time") {
+                                    binding.tvFrequency.visibility = View.VISIBLE
+                                    court.special_frequency.forEach {
+                                        val radioButton = RadioButton(context)
+                                        radioButton.text = it
+                                        binding.rdGroup.addView(radioButton)
+                                    }
                                     val temp = courtAdapter.selected
                                     courtAdapter.selected = position
                                     viewModel.getTimeSlots(courtId, date, time)
+                                    selectedCourt = resource.result.courts[position]
                                     courtAdapter.notifyItemChanged(temp)
                                     courtAdapter.notifyItemChanged(position)
                                     binding.rvTimes.adapter = null
@@ -283,7 +287,28 @@ class BookOnlineFragment : BindingFragment<FragmentBookOnlineBinding>() {
                         timeAdapter.setOnItemClickListener(object :
                             RecyclerAdapterTimeSlots.OnItemClickListener {
                             override fun onItemClick(position: Int) {
-                                val timeSlot = it.result[position]
+                                val timeSlot = it.result[position].tslot_id
+                                val checkedRadioButtonId = binding.rdGroup.checkedRadioButtonId
+                                if (checkedRadioButtonId == -1) {
+                                    Toast.makeText(
+                                        context,
+                                        "Please select frequency",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+                                    return
+                                }
+                                val checkedRadioButton =
+                                    binding.rdGroup.findViewById<RadioButton>(checkedRadioButtonId)
+                                val frequency = checkedRadioButton.text.toString()
+                                viewModel.makeGetTimeSlotReservation(
+                                    timeSlot,
+                                    selectedCourt!!.frequency,
+                                    frequency.toInt()
+                                )
+                                Log.d(
+                                    "TAG",
+                                    "onItemClick: $timeSlot, ${selectedCourt!!.frequency}, $frequency"
+                                )
                             }
                         })
                     }
@@ -298,5 +323,30 @@ class BookOnlineFragment : BindingFragment<FragmentBookOnlineBinding>() {
             }
         }
 
+        lifecycleScope.launchWhenStarted {
+            viewModel.reservationFlow.collect {
+                when (it) {
+                    is Resource.Success -> {
+                        // navigate to cart fragment with list of time slots in bundle
+                        val bundle = Bundle()
+                        Log.d("TAG", "slots: ${it.result}")
+                        bundle.putString("slotIds", it.result.datum)
+                        proceed = if (proceed) {
+                            Navigation.findNavController(binding.root)
+                                .navigate(R.id.cartFragment, bundle)
+                            false
+                        } else
+                            true
+                    }
+                    is Resource.Error -> {
+                        Toast.makeText(context, it.exception.message, Toast.LENGTH_SHORT).show()
+                    }
+                    is Resource.Loading -> {
+                        Log.d("TAG", "onViewCreated: Loading")
+                    }
+                    else -> {}
+                }
+            }
+        }
     }
 }

@@ -129,4 +129,9 @@
         android:id="@+id/formPlayerFinderFragment"
         android:name="com.devsinc.bws.ui.findteammates.FormPlayerFinderFragment"
         android:label="FormPlayerFinderFragment" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.devsinc.bws.ui.cart.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>

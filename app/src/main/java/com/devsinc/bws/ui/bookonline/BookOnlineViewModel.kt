@@ -2,10 +2,7 @@ package com.devsinc.bws.ui.bookonline
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.devsinc.bws.model.AdvanceSearchItem
-import com.devsinc.bws.model.TimeSlot
-import com.devsinc.bws.model.TimeSlotParams
-import com.devsinc.bws.model.Venue
+import com.devsinc.bws.model.*
 import com.devsinc.bws.repository.CustomerRepository
 import com.devsinc.bws.repository.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -20,6 +17,9 @@ class BookOnlineViewModel @Inject constructor(
 ) : ViewModel() {
     private val _venueByLocationFlow = MutableStateFlow<Resource<List<Venue>>?>(null)
     val venueByLocationFlow = _venueByLocationFlow.asStateFlow()
+
+    private val _reservationFlow = MutableStateFlow<Resource<OmniString>?>(null)
+    val reservationFlow = _reservationFlow.asStateFlow()
 
     private val _courtListFlow = MutableStateFlow<Resource<AdvanceSearchItem>?>(null)
     val courtListFlow = _courtListFlow.asStateFlow()
@@ -40,5 +40,10 @@ class BookOnlineViewModel @Inject constructor(
     fun getTimeSlots(courtId: Int, date: String, time: String) = viewModelScope.launch {
         _timeSlotsFlow.value = Resource.Loading
         _timeSlotsFlow.value = repository.getTimeSlots(TimeSlotParams(courtId, date, time))
+    }
+
+    fun makeGetTimeSlotReservation(slotId: Int, frequency: Int, maxFrequency: Int) = viewModelScope.launch {
+        _reservationFlow.value = Resource.Loading
+        _reservationFlow.value = repository.makeTimeSlotReservation(MakeTimeSlotReservationParams(slotId, frequency, maxFrequency))
     }
 }

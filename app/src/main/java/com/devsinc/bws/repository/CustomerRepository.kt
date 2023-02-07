@@ -1,6 +1,8 @@
 package com.devsinc.bws.repository
 
 import com.devsinc.bws.model.*
+import retrofit2.Response
+import retrofit2.http.Query
 
 interface CustomerRepository {
     var customer: Customer?
@@ -36,4 +38,10 @@ interface CustomerRepository {
     suspend fun advanceSearch(venueId: Int, sportId: Int): Resource<AdvanceSearchItem>
 
     suspend fun getTimeSlots(params: TimeSlotParams): Resource<List<TimeSlot>>
+
+    suspend fun getTimeSlotReservation(slotId: String, customerId: Int): Resource<List<TimeSlotCart>>
+
+    suspend fun makeTimeSlotReservation(params: MakeTimeSlotReservationParams): Resource<OmniString>
+
+    suspend fun changeCartStatus(slotId: String, slotStatus: Int): Resource<OmniString?>
 }

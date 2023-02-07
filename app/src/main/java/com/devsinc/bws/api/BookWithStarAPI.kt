@@ -73,5 +73,11 @@ interface BookWithStarAPI {
     suspend fun getClassAddOns(@Query("class_id") classId: Int): Response<BookWithStarAPIresponse<List<Addon>>>
 
     @POST("get_timeslot_reservation")
-    suspend fun getTimeSlotReservation(@Query("slot_ids") slotId: Int, @Query("customer_id") customerId: Int): Response<ReservationApiresponse>
+    suspend fun getTimeSlotReservation(@Query("slot_ids") slotId: String, @Query("customer_id") customerId: Int): Response<BookWithStarAPIresponse<List<TimeSlotCart>>>
+
+    @POST("make_timeslot_reservation")
+    suspend fun makeTimeSlotReservation(@Body params: MakeTimeSlotReservationParams): Response<BookWithStarAPIresponse<OmniString>>
+
+    @POST("change_cart_status")
+    suspend fun changeCartStatus(@Query("slot_id") slotId: String, @Query("slot_status") slotStatus: Int): Response<BookWithStarAPIresponse<OmniString?>>
 }

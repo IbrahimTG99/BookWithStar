@@ -2,9 +2,9 @@ package com.devsinc.bws.model
 
 import com.google.gson.annotations.SerializedName
 
-data class ReservationApiresponse(
+data class ReservationApiresponse<T>(
     @SerializedName("data")
-    val data: List<TimeSlot>,
+    val data: T,
 
     @SerializedName("message")
     val message: String? = null,

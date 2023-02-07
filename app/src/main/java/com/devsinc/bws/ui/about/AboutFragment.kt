@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
+import com.devsinc.bws.MainActivity
 import com.devsinc.bws.R
 
 class AboutFragment : Fragment() {
@@ -25,7 +27,8 @@ class AboutFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(AboutViewModel::class.java)
+        viewModel = ViewModelProvider(this)[AboutViewModel::class.java]
+        (activity as AppCompatActivity).supportActionBar?.title = "About Us"
         // TODO: Use the ViewModel
     }
 

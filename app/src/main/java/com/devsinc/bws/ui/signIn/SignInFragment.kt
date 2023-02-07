@@ -73,17 +73,12 @@ class SignInFragment : BindingFragment<FragmentSignInBinding>() {
                 when (result) {
                     is Resource.Success -> {
                         // navigate to home
-                        findNavController().navigate(R.id.action_signInFragment_to_homeFragment)
+                        findNavController().navigate(R.id.homeFragment)
                         (activity as MainActivity).supportActionBar?.show()
                         (activity as MainActivity).binding.drawerLayout.setDrawerLockMode(
                             DrawerLayout.LOCK_MODE_UNLOCKED
                         )
-
-                        Toast.makeText(
-                            requireContext(),
-                            result.result.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        (activity as MainActivity).checkIfCustomerLoggedIn()
                     }
                     is Resource.Error -> {
                         Toast.makeText(
